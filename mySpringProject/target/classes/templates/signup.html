@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Registration Page</title>
+    <style>
+    
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 1300px;
+            margin: 0 40px;
+            background: #d8f9fc;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            float: right; /* Float the image container to the right */
+            max-width: 500px; /* Adjust the width as needed */
+        }
+
+        .container img {
+            max-width: 100%;
+            height: 500px ;
+            padding-right: 30px;
+            padding-top: 40px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"] {
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 20px; /* Adjust the font size as needed */
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Page</h1>
+   
+    <form action="/signup" method="POST">
+        
+        <div class="container">
+            <!-- <img src="/static/image/Register.jpg" alt="Registration Image"/> -->
+            <img src="\static\image\Register.jpg" th:src="@{/static/image/Register.jpg}"/> 
+        </div>
+
+        <label>Select Role:</label>
+        <input type="radio" name="role" value="Student">Student
+        <input type="radio" name="role" value="Instructor" > Instructor<br><br>
+       
+
+        <!-- First Name -->
+        <br><label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <!-- Last Name -->
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <!-- Mobile Number -->
+        <label for="mobile_number">Mobile Number:</label>
+        <input type="tel" id="mobile_number" name="contact" required><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+        <input type="radio" id="other" name="gender" value="Other"> Other<br>
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <!-- Username -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+        <p>Password must contain at least one uppercase letter, <br>
+            one number, one special character (@$!%*?&), and be at least 8 characters long.</p><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+
+        <!-- Add New User Button -->
+        <input type="button" value="Add New User" onclick="clearForm()">
+    </form>
+
+    <script>
+        // Function to clear the form fields
+        function clearForm() {
+            document.getElementById("registrationForm").reset();
+        }
+    </script>
+</body>
+</html>

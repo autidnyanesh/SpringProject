@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationary Store - Home</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Stationary Store</h1>
+        <p>Your One-Stop Shop for Stationery Supplies</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+        <h2>Featured Products</h2>
+        <div class="product">
+            <img src="\static\image\pencil.jpg" th:src="@{/image/pencil.jpg}"/>
+            <h3>High-Quality Pens</h3>
+            <p>Explore our wide range of pens for all your writing needs.</p>
+        </div>
+    <footer>
+        &copy; 2023 Stationary Store. All rights reserved.
+    </footer>
+</body>
+</html>
